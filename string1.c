@@ -1,32 +1,32 @@
 #include "shell.h"
 
 /**
- * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
+ * _strcpy - copies a string.........
+ * @dest: the destination.........
+ * @src: the source.........
  *
- * Return: pointer to destination
+ * Return: pointer to destination.........
  */
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int index = 0;
 
 	if (dest == src || src == 0)
 		return (dest);
-	while (src[i])
+	while (src[index])
 	{
-		dest[i] = src[i];
-		i++;
+		dest[index] = src[index];
+		index++;
 	}
-	dest[i] = 0;
+	dest[index] = 0;
 	return (dest);
 }
 
 /**
- * _strdup - duplicates a string
- * @str: the string to duplicate
+ * _strdup - duplicates a string.........
+ * @str: the string to duplicate.........
  *
- * Return: pointer to the duplicated string
+ * Return: pointer to the duplicated string.........
  */
 char *_strdup(const char *str)
 {
@@ -46,42 +46,42 @@ char *_strdup(const char *str)
 }
 
 /**
- * _puts - prints an input string
- * @str: the string to be printed
+ * _puts - prints an input string.........
+ * @str: the string to be printed.........
  *
- * Return: Nothing
+ * Return: Nothing.........
  */
 void _puts(char *str)
 {
-	int i = 0;
+	int index = 0;
 
 	if (!str)
 		return;
-	while (str[i] != '\0')
+	while (str[index] != '\0')
 	{
-		_putchar(str[i]);
-		i++;
+		_putchar(str[index]);
+		index++;
 	}
 }
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * _putchar - writes the character c to stdout.........
+ * @c: The character to print.........
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success 1..........
+ * On error, -1 is returned, and errno is set appropriately..........
  */
 int _putchar(char c)
 {
-	static int i;
+	static int index;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || index >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, i);
-		i = 0;
+		write(1, buf, index);
+		index = 0;
 	}
 	if (c != BUF_FLUSH)
-		buf[i++] = c;
+		buf[index++] = c;
 	return (1);
 }
